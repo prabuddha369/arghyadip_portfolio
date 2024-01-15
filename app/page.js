@@ -104,7 +104,7 @@ useEffect(() => {
 }, []);
 
   return ((windowWidth >= 768 ?
-    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '450vh'}}>
+    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '500vh'}}>
     <Header windowWidth={windowWidth}/>
     <Toaster toastOptions={{ duration: 2000 }} />
     <div className='flex flex-row mt-20 mx-20 justify-between gap-2'>
