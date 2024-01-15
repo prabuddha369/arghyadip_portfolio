@@ -129,18 +129,20 @@ useEffect(() => {
     />
     </div>
     <div className='flex flex-row justify-start items-center mt-10'>
-      <Image src="/my_pic2.jpg" width={200} height={200} className='rounded-full ms-[10%]'/>
-      <p id='about' className={`${lb.className} text-center ms-10 text-[#000000] text-5xl transition-opacity duration-500`}>Arghyadip Biswas</p>
-    </div>
-    <div className="ms-[30%]">
-    <ul className={`text-[#000000] text-lg ${lb.className} pt-2 transition-opacity duration-500`}>
-      <ul className="list-disc pl-5">
-        <li>Fitness Trainer</li>
-        <li>Sports Nutrition Consultant</li>
-        <li>Dietary Suppliments Advisor</li>
-        <li>Athlete in Calisthenics</li>
+      <Image src="/my_pic2.jpg" width={300} height={300} className='rounded-full ms-[10%]'/>
+      <div className='flex flex-col'>
+      <p id='about' className={`${lb.className} text-center ms-20 text-[#000000] text-5xl transition-opacity duration-500`}>Arghyadip Biswas</p>
+      <div className="ms-20">
+      <ul className={`text-[#000000] text-lg ${lb.className} pt-2 transition-opacity duration-500`}>
+        <ul className="list-disc pl-5">
+         <li>Fitness Trainer</li>
+         <li>Sports Nutrition Consultant</li>
+          <li>Dietary Suppliments Advisor</li>
+          <li>Athlete in Calisthenics</li>
+       </ul>
       </ul>
-     </ul>
+    </div>
+    </div>
   </div>
     <div className='flex flex-row justify-between items-center mx-16 mt-10'>
       <div className='flex flex-col text-2xl text-black text-center'>
@@ -331,12 +333,12 @@ useEffect(() => {
     <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
       Transform Your<br />Body, get<br />your Dream Physique
     </p>
-    <div className='flex flex-row justify-start items-center mx-14 mt-10'>
-      <Image src="/my_pic2.jpg" width={80} height={80} className='rounded-full'/>
-      <p id='about' className={`${lb.className} text-center text-[#000000] text-2xl w-[90%] transition-opacity duration-500`}>Arghyadip Biswas</p>
-    </div>
-    <div className="ms-[25%] mt-5">
-    <ul className={`text-[#000000] text-sm ${lb.className} pt-2 transition-opacity duration-500`}>
+    <div className='flex flex-row justify-start items-center mx-10 mt-10'>
+      <Image src="/my_pic2.jpg" width={110} height={110} className='rounded-full'/>
+      <div className='flex flex-col'>
+      <p id='about' className={`${lb.className} text-center ms-4 text-[#000000] text-xl transition-opacity duration-500`}>Arghyadip Biswas</p>
+      <div className="ms-4 mt-3">
+    <ul className={`text-[#000000] text-[10px] ${lb.className} transition-opacity duration-500`}>
       <ul className="list-disc pl-5">
         <li>Fitness Trainer</li>
         <li>Sports Nutrition Consultant</li>
@@ -344,7 +346,9 @@ useEffect(() => {
         <li>Athlete in Calisthenics</li>
       </ul>
      </ul>
-  </div>
+      </div>
+      </div>
+    </div>
     <div className='w-screen flex text-sm justify-center my-10'>
        <Link href="#services">
        <button className='px-5 py-3 rounded-md bg-[#132dbf]'>My services</button>
