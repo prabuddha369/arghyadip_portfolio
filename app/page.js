@@ -114,7 +114,7 @@ useEffect(() => {
         <ImageSlider images={images} />
      </div>
      <p className={`ms-[20vh] pt-[40vh] ${lb.className} text-[#000000] text-5xl w-[60vh]`}>My Services</p>
-     <div id='service' className='flex flex-col'>
+     <div id='services' className='flex flex-col'>
       <div className='flex flex-row justify-between px-16 py-10'>
         <ServiceCard 
          title="Fitness Coaching"
