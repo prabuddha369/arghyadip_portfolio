@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Libre_Baskerville} from 'next/font/google';
 import Header from './header/page';
-import HoverButton from './hover_button/page';
 import ServiceCard from './service_card/page';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -47,7 +46,6 @@ const [isFormVisible, setFormVisibility] = useState(false);
 
 const handleButtonClick = () => {
   setFormVisibility(!isFormVisible);
-  console.log("clicked"+isFormVisible);
   setName('');
   setAge('');
   setContact('');
@@ -71,26 +69,23 @@ const handleUpload = async () => {
         name,
         email,
         contact,
-        age
+        age,
       }),
     });
-
+    
     if (response.ok) {
-      const data = await response.json();
-      router.push('/');
       toast.success("Submitted successfully!");
-      setName('');
-      setAge('');
-      setContact('');
-      setEmail('');
+      handleButtonClick;
     } else {
       const errorData = await response.json();
       console.log('Error sending email:', errorData);
-      toast.error(errorData);
+      toast.error("An error occured, please try again!");
+      handleButtonClick;
     }
   } catch (error) {
     console.log('An error occurred:', error);
-    toast.error(error);
+    toast.error("An error occured, please try again!");
+    handleButtonClick;
   }
 }
 
@@ -251,8 +246,10 @@ useEffect(() => {
 `}</style>
      </div>
 
-    <div className='fixed bottom-[-200px] right-40'  onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
-      <HoverButton/>
+    <div className='fixed bottom-10 right-40'  onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
+    <div className="flex p-4 items-center bg-black px-4 cursor-pointer transition duration-300 hover:bg-white hover:text-black" style={{boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)'}}>
+        <span>Contact Now</span>
+    </div>
     </div>
     {isFormVisible && (
         <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50'>
