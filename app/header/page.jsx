@@ -15,26 +15,26 @@ const Header = ({windowWidth}) => {
   };
 
   return (
-    <div className={`h-[10vh] text-black w-screen bg-[#ffffff] flex place-items-center relative`} style={{ borderBottom: '1px solid white' }}>
+    <div className={`h-[10vh] text-black w-full bg-[#ffffff] flex place-items-center relative`} style={{ borderBottom: '1px solid white' }}>
       <div className='flex place-items-center'>
-        <Image className='mx-[4vh]' src="/logo.jpg" width={50} height={100} />
+        <Image className='mx-[4vh] rounded-full' src="/logo.jpg" width={50} height={100} />
         <p className={`text-xl ${dancing_script.className}`}>Arghyadip Biswas</p>
       </div>
       {windowWidth >= 768 ? (
         <div className='flex gap-14 absolute right-20'>
-          <Link href='#about'>
-            <p>About</p>
-          </Link>
-          <Link href='#contact'>
-            <p>Contact</p>
-          </Link>
-          <Link href='#certificates'>
-            <p>Certificate</p>
-          </Link>
-          <Link href='#services'>
-            <p>Services</p>
-          </Link>
-        </div>
+        <Link href='#about'>
+          <p className='transition duration-300 hover:text-blue-500'>About</p>
+        </Link>
+        <Link href='#'>
+          <p className='transition duration-300 hover:text-blue-500'>Events</p>
+        </Link>
+        <Link href='#'>
+          <p className='transition duration-300 hover:text-blue-500'>Contact</p>
+        </Link>
+        <Link href='#services'>
+          <p className='transition duration-300 hover:text-blue-500'>Services</p>
+        </Link>
+      </div>
       ) : (
         <>
           <button className='absolute right-6 top-6' onClick={toggleMenu}>
@@ -48,8 +48,8 @@ const Header = ({windowWidth}) => {
               <Link href='#contact'>
                 <p className='my-4 text-white cursor-pointer'>Contact</p>
               </Link>
-              <Link href='#certificates'>
-                <p className='my-4 text-white cursor-pointer'>Certificates</p>
+              <Link href='#'>
+                <p className='my-4 text-white cursor-pointer'>Events</p>
               </Link>
               <Link href='#services'>
                 <p className='my-4 text-white cursor-pointer'>Services</p>

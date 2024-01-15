@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Libre_Baskerville} from 'next/font/google';
 import Header from './header/page';
-import ImageSlider from './image_slider/page';
 import HoverButton from './hover_button/page';
 import ServiceCard from './service_card/page';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image'
+import { toast, Toaster } from "react-hot-toast";
 import Link from 'next/link'
 
 const lb= Libre_Baskerville({ subsets: ['latin'], weight: '400' });
@@ -13,6 +15,7 @@ const lb= Libre_Baskerville({ subsets: ['latin'], weight: '400' });
 export default function Home() {
 
 const [fade, setFade] = useState(false);
+const [fadein, setFadein] = useState(false);
 
   // Effect to trigger the fade-in animation after a short delay (e.g., 500ms)
   useEffect(() => {
@@ -24,8 +27,6 @@ const [fade, setFade] = useState(false);
     return () => clearTimeout(timeout);
   }, []);
 
-const [fadein, setFadein] = useState(false);
-
   // Effect to trigger the fade-in animation after a short delay (e.g., 500ms)
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -36,31 +37,62 @@ const [fadein, setFadein] = useState(false);
     return () => clearTimeout(timeout);
   }, []);
 
-const [fadeIn, setFadeIn] = useState(false);
 
-const handleScroll = () => {
-  const scrollY = window.scrollY;
 
-  // Adjust these values according to your scroll position
-  const fadeInThreshold = 200; // Set the threshold for fade-in effect
-  const fadeOutThreshold = 1000; // Set the threshold for fade-out effect
+const [name, setName] = useState('');
+const [age, setAge] = useState('');
+const [contact, setContact] = useState('');
+const [email, setEmail] = useState('');
+const [isFormVisible, setFormVisibility] = useState(false);
 
-  if (scrollY > fadeInThreshold && scrollY < fadeOutThreshold) {
-    setFadeIn(true);
-  } else {
-    setFadeIn(false);
-  }
+const handleButtonClick = () => {
+  setFormVisibility(!isFormVisible);
+  console.log("clicked"+isFormVisible);
+  setName('');
+  setAge('');
+  setContact('');
+  setEmail('');
 };
 
-useEffect(() => {
-  // Attach the scroll event listener when the component mounts
-  window.addEventListener('scroll', handleScroll);
 
-  // Detach the scroll event listener when the component unmounts
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+const handleUpload = async () => {
+  if (name === "" || contact === "" || email === "" || age==="") {
+    toast.error("Please fill in all the fields.");
+    return;
+  }
+  try {
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // Include any required data in the request body
+      body: JSON.stringify({
+        name,
+        email,
+        contact,
+        age
+      }),
+    });
 
-
+    if (response.ok) {
+      const data = await response.json();
+      router.push('/');
+      toast.success("Submitted successfully!");
+      setName('');
+      setAge('');
+      setContact('');
+      setEmail('');
+    } else {
+      const errorData = await response.json();
+      console.log('Error sending email:', errorData);
+      toast.error(errorData);
+    }
+  } catch (error) {
+    console.log('An error occurred:', error);
+    toast.error(error);
+  }
+}
 
 const [windowWidth, setWindowWidth] = useState(0);
 
@@ -79,6 +111,7 @@ useEffect(() => {
   return ((windowWidth >= 768 ?
     <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '450vh'}}>
     <Header windowWidth={windowWidth}/>
+    <Toaster toastOptions={{ duration: 2000 }} />
     <div className='flex flex-row mt-20 mx-20 justify-between gap-2'>
     <div className='flex flex-col'>
     <p className={`text-[10vh] bg-clip-text ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
@@ -163,25 +196,138 @@ useEffect(() => {
       </div>
      </div>
 
-     <p id='certificates' className={`ms-20 pt-20 ${lb.className} text-[#000000] text-5xl`}>My Credentials</p>
-     <div className=' mt-10 ms-40 w-[113vh] h-[60vh]'>
-        <ImageSlider/>
+     <p id='certificates' className={`ms-20 text-center pt-20 ${lb.className} text-[#000000] text-5xl`}>My Credentials</p>
+     <div className='flex flex-row mx-10 w-[90%] mt-5 justify-center'>
+     <Carousel className='w-[60%]'>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c1.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c2.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c3.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c4.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                  </Carousel>
+                  <style>
+                    {`
+  .image-container {
+    height: 450px; 
+    overflow: hidden;
+  }
+
+  .image-container img {
+    object-fit: cover;
+    width: 100%; 
+    height: 100%; 
+  }
+`}</style>
      </div>
 
-    <div className='fixed bottom-[-200px] right-40'>
-      <HoverButton />
+    <div className='fixed bottom-[-200px] right-40'  onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
+      <HoverButton/>
     </div>
+    {isFormVisible && (
+        <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50'>
+          <div className='bg-white rounded-lg mx-10 text-black shadow-md'>
+          <div className='flex bg-[#c7c7c7] rounded-t-lg px-5 flex-row justify-between'>
+            <p className='mb-5 pt-10'>We need few details of your's</p>
+            <button
+              onClick={handleButtonClick}
+              className='text-black hover:text-gray-700'
+            >
+              X
+            </button>
+          </div>
+          <form className='flex flex-col px-10 py-5'>
+            <label htmlFor='name'>Name:</label>
+            <input
+              type='text'
+              id='name'
+              name='name'
+              className='border border-2 rounded-lg'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+
+            <label htmlFor='age'>Age:</label>
+            <input
+              type='text'
+              id='age'
+              name='age'
+              className='border border-2 rounded-lg'
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+
+            <label htmlFor='contact'>Contact Number:</label>
+            <input
+              type='text'
+              id='contact'
+              name='contact'
+              className='border border-2 rounded-lg'
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+            />
+
+            <label htmlFor='email'>Email:</label>
+            <input
+              type='text'
+              id='email'
+              name='email'
+              className='border border-2 rounded-lg'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <button type='button' onClick={handleUpload} className='bg-[#0759de] mt-5 mx-10 rounded-lg text-white p-3'>
+              Submit
+            </button>
+          </form>
+          </div>
+        </div>
+      )}
   </div>
     :
     <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '500vh'}}>
     <Header />
+    <Toaster toastOptions={{ duration: 2000 }} />
     <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
       Transform Your<br />Body, get<br />your Dream Life
     </p>
     <p id='about' className={`mx-5 pt-10 ${lb.className} text-center text-[#000000] text-2xl w-[90%] transition-opacity duration-500`}>I am, Arghyadip Biswas</p>
     <p className={`text-[#000000] text-sm ${lb.className} text-center pt-2 mx-5 w-[90%] transition-opacity duration-500`}>a certified fitness coach, nutrition diet planner, and calisthenics coach, possessing expertise in exercise physiology, nutrition science, and bodyweight training.</p>
     <div className='w-screen flex text-sm justify-center my-10'>
+       <Link href="#services">
        <button className='px-5 py-3 rounded-md bg-[#132dbf]'>My services</button>
+       </Link>
     </div>
     <div
       className='h-[30vh] w-[80%] flex mx-10 mt-5 transition-opacity duration-1000'
@@ -276,10 +422,131 @@ useEffect(() => {
          imageUrl="/nutrition.jpg"/>
       </div>
 
-    <p id='certificates' className={`ms-5 pt-16 ${lb.className} text-[#000000] text-3xl`}>My Credentials</p>
-     <div className='mx-5 w-[90%] mt-5'>
-        <ImageSlider/>
+    <p id='certificates' className={`text-center pt-16 ${lb.className} text-[#000000] text-3xl`}>My Credentials</p>
+     <div className='flex flex-row mx-10 w-[90%] mt-5'>
+     <Carousel className='w-[90%]'>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c1.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c2.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c3.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                    <div className="image-container">
+                      <Image
+                        className="rounded-xl"
+                        src="/c4.jpg"
+                        alt="Property thumbnail"
+                        width={400}
+                        height={400}
+                      />
+                    </div>
+                  </Carousel>
+                  <style>
+                    {`
+  .image-container {
+    height: 240px; 
+    overflow: hidden;
+  }
+
+  .image-container img {
+    object-fit: cover;
+    width: 100%; 
+    height: 100%; 
+  }
+`}</style>
      </div>
+     <div className='fixed bg-white rounded-full p-5 bottom-5 right-5 shadow-md'>
+        <img
+          width="44"
+          height="44"
+          src="https://img.icons8.com/color/96/speech-bubble-with-dots.png"
+          alt="speech-bubble-with-dots"
+          onClick={handleButtonClick}
+          style={{ cursor: 'pointer' }}
+        />
+      </div>
+
+      {isFormVisible && (
+        <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50'>
+          <div className='bg-white rounded-lg mx-10 text-black shadow-md'>
+          <div className='flex bg-[#c7c7c7] rounded-t-lg px-5 flex-row justify-between'>
+            <p className='mb-5 pt-10'>We need few details of your's</p>
+            <button
+              onClick={handleButtonClick}
+              className='text-black hover:text-gray-700'
+            >
+              X
+            </button>
+          </div>
+          <form className='flex flex-col px-10 py-5'>
+            <label htmlFor='name'>Name:</label>
+            <input
+              type='text'
+              id='name'
+              name='name'
+              className='border border-2 rounded-lg'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+
+            <label htmlFor='age'>Age:</label>
+            <input
+              type='text'
+              id='age'
+              name='age'
+              className='border border-2 rounded-lg'
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+
+            <label htmlFor='contact'>Contact Number:</label>
+            <input
+              type='text'
+              id='contact'
+              name='contact'
+              className='border border-2 rounded-lg'
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+            />
+
+            <label htmlFor='email'>Email:</label>
+            <input
+              type='text'
+              id='email'
+              name='email'
+              className='border border-2 rounded-lg'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <button type='button' onClick={handleUpload} className='bg-[#0759de] mt-5 mx-10 rounded-lg text-white p-3'>
+              Submit
+            </button>
+          </form>
+          </div>
+        </div>
+      )}
   </div>
     )
   );
