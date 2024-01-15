@@ -110,10 +110,8 @@ useEffect(() => {
     <div className='flex flex-row mt-20 mx-20 justify-between gap-2'>
     <div className='flex flex-col'>
     <p className={`text-[10vh] bg-clip-text ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
-      Transform Your<br />Body, get<br />your Dream Life
+      Transform Your<br />Body, get<br />your Dream Physique
     </p>
-    <p id='about' className={`pt-20 ${lb.className} text-[#000000] text-4xl transition-opacity duration-500`}>I am, Arghyadip Biswas</p>
-    <p className={`text-[#4d4d4d] text-lg ${lb.className} pt-3 w-[70vh] transition-opacity duration-500`}>a certified fitness coach, nutrition diet planner, and calisthenics coach, possessing expertise in exercise physiology, nutrition science, and bodyweight training.</p>
     <div className='justify-start'>
     <Link href="#services">
     <button className='px-20 py-5 mt-10 rounded-md bg-[#132dbf]'>My services</button>
@@ -130,6 +128,20 @@ useEffect(() => {
       }}
     />
     </div>
+    <div className='flex flex-row justify-start items-center mt-10'>
+      <Image src="/my_pic2.jpg" width={200} height={200} className='rounded-full ms-[10%]'/>
+      <p id='about' className={`${lb.className} text-center ms-10 text-[#000000] text-5xl transition-opacity duration-500`}>Arghyadip Biswas</p>
+    </div>
+    <div className="ms-[30%]">
+    <ul className={`text-[#000000] text-lg ${lb.className} pt-2 transition-opacity duration-500`}>
+      <ul className="list-disc pl-5">
+        <li>Fitness Trainer</li>
+        <li>Sports Nutrition Consultant</li>
+        <li>Dietary Suppliments Advisor</li>
+        <li>Athlete in Calisthenics</li>
+      </ul>
+     </ul>
+  </div>
     <div className='flex flex-row justify-between items-center mx-16 mt-10'>
       <div className='flex flex-col text-2xl text-black text-center'>
         <p className='text-5xl'>4.8</p>
@@ -317,10 +329,22 @@ useEffect(() => {
     <Header />
     <Toaster toastOptions={{ duration: 2000 }} />
     <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
-      Transform Your<br />Body, get<br />your Dream Life
+      Transform Your<br />Body, get<br />your Dream Physique
     </p>
-    <p id='about' className={`mx-5 pt-10 ${lb.className} text-center text-[#000000] text-2xl w-[90%] transition-opacity duration-500`}>I am, Arghyadip Biswas</p>
-    <p className={`text-[#000000] text-sm ${lb.className} text-center pt-2 mx-5 w-[90%] transition-opacity duration-500`}>a certified fitness coach, nutrition diet planner, and calisthenics coach, possessing expertise in exercise physiology, nutrition science, and bodyweight training.</p>
+    <div className='flex flex-row justify-start items-center mx-14 mt-10'>
+      <Image src="/my_pic2.jpg" width={80} height={80} className='rounded-full'/>
+      <p id='about' className={`${lb.className} text-center text-[#000000] text-2xl w-[90%] transition-opacity duration-500`}>Arghyadip Biswas</p>
+    </div>
+    <div className="ms-[25%] mt-5">
+    <ul className={`text-[#000000] text-sm ${lb.className} pt-2 transition-opacity duration-500`}>
+      <ul className="list-disc pl-5">
+        <li>Fitness Trainer</li>
+        <li>Sports Nutrition Consultant</li>
+        <li>Dietary Suppliments Advisor</li>
+        <li>Athlete in Calisthenics</li>
+      </ul>
+     </ul>
+  </div>
     <div className='w-screen flex text-sm justify-center my-10'>
        <Link href="#services">
        <button className='px-5 py-3 rounded-md bg-[#132dbf]'>My services</button>
