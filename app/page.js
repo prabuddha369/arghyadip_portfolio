@@ -340,7 +340,7 @@ useEffect(() => {
       )}
   </div>
     :
-    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '600vh'}}>
+    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '700vh'}}>
     <Header />
     <Toaster toastOptions={{ duration: 2000 }} />
     <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
