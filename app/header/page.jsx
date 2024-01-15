@@ -15,7 +15,7 @@ const Header = ({windowWidth}) => {
   };
 
   return (
-    <div className={`h-[10vh] w-screen bg-[#010421] flex place-items-center relative`} style={{ borderBottom: '1px solid white' }}>
+    <div className={`h-[10vh] text-black w-screen bg-[#ffffff] flex place-items-center relative`} style={{ borderBottom: '1px solid white' }}>
       <div className='flex place-items-center'>
         <Image className='mx-[4vh]' src="/logo.jpg" width={50} height={100} />
         <p className={`text-xl ${dancing_script.className}`}>Arghyadip Biswas</p>

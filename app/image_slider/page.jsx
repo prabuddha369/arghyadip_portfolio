@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const ImageSlider = () => {
   const images = [
@@ -7,13 +7,35 @@ const ImageSlider = () => {
     '/c2.jpg',
     '/c3.jpg',
     '/c4.jpg'
-];
+  ];
 
   const [slideIndex, setSlideIndex] = useState(1);
+  const [startX, setStartX] = useState(null);
+
+  const sliderRef = useRef();
 
   useEffect(() => {
     showSlides(slideIndex);
   }, [slideIndex]);
+
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!startX) return;
+    const xDiff = startX - e.touches[0].clientX;
+
+    if (xDiff > 50) {
+      // Swipe left
+      plusSlides(1);
+    } else if (xDiff < -50) {
+      // Swipe right
+      plusSlides(-1);
+    }
+
+    setStartX(null);
+  };
 
   const plusSlides = (n) => {
     const newIndex = slideIndex + n;
@@ -35,12 +57,14 @@ const ImageSlider = () => {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+
     if (n > slides.length) {
       setSlideIndex(1);
     }
     if (n < 1) {
       setSlideIndex(slides.length);
     }
+
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
@@ -54,33 +78,38 @@ const ImageSlider = () => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-  window.addEventListener('resize', handleResize);
-  handleResize();
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
-}, []);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
-    <div className="slideshow-container max-w-1000 mx-auto relative">
+    <div
+      className="slideshow-container max-w-1000 mx-auto relative"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      ref={sliderRef}
+    >
       {images.map((image, index) => (
         <div
           key={index}
           className={`mySlides fade ${index + 1 === slideIndex ? 'active' : ''}`}
           style={{
             flex: '0 0 100%',
-            height: `${windowWidth>=768?'450px':'250px'}`, // Adjust the height as needed
+            height: `${windowWidth >= 768 ? '450px' : '250px'}`,
             backgroundImage: `url(${image})`,
             backgroundSize: 'cover',
             transition: 'transform 0.5s ease-in-out',
             marginLeft: `${(index - slideIndex + 1) * 100}%`,
           }}
-        >
-        </div>
+        ></div>
       ))}
       <div
         style={{
