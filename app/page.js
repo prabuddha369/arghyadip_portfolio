@@ -54,7 +54,7 @@ const handleButtonClick = () => {
 
 
 const handleUpload = async () => {
-  if (name === "" || contact === "" || email === "" || age==="") {
+  if (name === "" || email === "" || age==="") {
     toast.error("Please fill in all the fields.");
     return;
   }
@@ -104,7 +104,7 @@ useEffect(() => {
 }, []);
 
   return ((windowWidth >= 768 ?
-    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '500vh'}}>
+    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '600vh'}}>
     <Header windowWidth={windowWidth}/>
     <Toaster toastOptions={{ duration: 2000 }} />
     <div className='flex flex-row mt-20 mx-20 justify-between gap-2'>
@@ -181,27 +181,38 @@ useEffect(() => {
     <p className={`ms-20 pt-20 ${lb.className} text-[#000000] text-5xl w-[60vh]`}>My Services</p>
      <div id='services' className='flex flex-col'>
       <div className='flex flex-row gap-5 justify-between px-16 py-10'>
-        <ServiceCard 
-         title="Fitness Coaching"
-         description="Personalized workout programs tailored to your goals."
-         price={99.99}
-         imageUrl="/nutrition.jpg"/>
-            <ServiceCard 
-         title="Fitness Coaching"
-         description="Personalized workout programs tailored to your goals."
-         price={99.99}
-         imageUrl="/nutrition.jpg"/>
-            <ServiceCard 
-         title="Fitness Coaching"
-         description="Personalized workout programs tailored to your goals."
-         price={99.99}
-         imageUrl="/nutrition.jpg"/>
+      <ServiceCard
+         title="Online Personal Consultancey"
+         description="Provided virtual personal training sessions and customized workout plans to clients, ensuring flexibility and convenience."
+         price="30 mins ₹499"
+         imageUrl="/1.jpg"/>
+          <ServiceCard
+         title="Weight Loss Transformation"
+         description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
+         price="30 mins ₹499"
+         imageUrl="/2.jpg"/>
+          <ServiceCard
+         title="Functional Fitness Training"
+         description="Designed functional fitness programs to improve overall strength, flexibility, and endurance for clients of all fitness levels."
+         price="30 mins ₹499"
+         imageUrl="/3.jpg"/>
       </div>
-      <div className='flex flex-row'>
-
-      </div>
-      <div className='flex flex-row'>
-
+      <div className='flex flex-row gap-5 justify-between px-16 py-10'>
+      <ServiceCard
+         title="Sports Nutritrion"
+         description="Optimize performance with personalized sports nutrition plans for peak fitness and well-being of the body."
+         price="30 mins ₹499"
+         imageUrl="/4.jpg"/>
+          <ServiceCard
+         title="Diet & Nutuion Planing"
+         description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
+         price="30 mins ₹499"
+         imageUrl="/5.jpg"/>
+          <ServiceCard
+         title="Group Fitness Classes"
+         description="Led energizing and motivating group fitness classes, catered to different fitness levels and goals, fostering a sense of community."
+         price="30 mins ₹499"
+         imageUrl="/6.jpg"/>
       </div>
      </div>
 
@@ -283,19 +294,9 @@ useEffect(() => {
               type='text'
               id='name'
               name='name'
-              className='border border-2 rounded-lg'
+              className='border border-2 rounded-lg ps-2'
               value={name}
               onChange={(e) => setName(e.target.value)}
-            />
-
-            <label htmlFor='age'>Age:</label>
-            <input
-              type='text'
-              id='age'
-              name='age'
-              className='border border-2 rounded-lg'
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
             />
 
             <label htmlFor='contact'>Contact Number:</label>
@@ -303,8 +304,9 @@ useEffect(() => {
               type='text'
               id='contact'
               name='contact'
-              className='border border-2 rounded-lg'
+              className='border border-2 rounded-lg ps-2'
               value={contact}
+              placeholder='optional'
               onChange={(e) => setContact(e.target.value)}
             />
 
@@ -313,12 +315,23 @@ useEffect(() => {
               type='text'
               id='email'
               name='email'
-              className='border border-2 rounded-lg'
+              className='border border-2 rounded-lg ps-2'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <button type='button' onClick={handleUpload} className='bg-[#0759de] mt-5 mx-10 rounded-lg text-white p-3'>
+          <label htmlFor='age'>Ask Arghyadip:</label>
+          <textarea
+            type='text'
+            id='age'
+            name='age'
+            className='h-20 border border-2 rounded-lg resize-none box-border p-2'
+            style={{ width: '300px' }}
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            />
+
+            <button type='button' onClick={handleUpload} className='bg-[#000000] mt-5 mx-10 rounded-lg text-white p-3'>
               Submit
             </button>
           </form>
@@ -327,7 +340,7 @@ useEffect(() => {
       )}
   </div>
     :
-    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '500vh'}}>
+    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '600vh'}}>
     <Header />
     <Toaster toastOptions={{ duration: 2000 }} />
     <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
@@ -398,6 +411,41 @@ useEffect(() => {
         <p>Arghyadip’s personalized coaching has transformed my body and mind. His holistic approach to fitness and nutrition has helped me achieve my goals and maintain a healthy lifestyle.</p>
     </div>
 
+    <p className={`ms-5 pt-20 ${lb.className} text-[#000000] text-3xl`}>My Services</p>
+      <div id='services' className='flex flex-col mx-5 gap-5 justify-between pt-5'>
+        <ServiceCard
+         title="Online Personal Consultancey"
+         description="Provided virtual personal training sessions and customized workout plans to clients, ensuring flexibility and convenience."
+         price="30 mins ₹499"
+         imageUrl="/1.jpg"/>
+          <ServiceCard
+         title="Weight Loss Transformation"
+         description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
+         price="30 mins ₹499"
+         imageUrl="/2.jpg"/>
+          <ServiceCard
+         title="Functional Fitness Training"
+         description="Designed functional fitness programs to improve overall strength, flexibility, and endurance for clients of all fitness levels."
+         price="30 mins ₹499"
+         imageUrl="/3.jpg"/>
+          <ServiceCard
+         title="Sports Nutritrion"
+         description="Optimize your athletic performance with personalized sports nutrition guidance. As an internationally accredited sports nutrition consultant, I craft tailored dietary plans to fuel your body, enhance recovery, and elevate your overall well-being, ensuring you achieve peak performance and reach your fitness goals."
+         price="30 mins ₹499"
+         imageUrl="/4.jpg"/>
+          <ServiceCard
+         title="Diet & Nutuion Planing"
+         description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
+         price="30 mins ₹499"
+         imageUrl="/5.jpg"/>
+          <ServiceCard
+         title="Group Fitness Classes"
+         description="Led energizing and motivating group fitness classes that catered to different fitness levels and goals, fostering a sense of community."
+         price="30 mins ₹499"
+         imageUrl="/6.jpg"/>
+      </div>
+
+      
     <div className='flex flex-col mx-10 mt-16 text-black'>
       <p className='text-black text-2xl font-bold'>Client Ratings</p>
 
@@ -427,25 +475,6 @@ useEffect(() => {
         <p className='text-[#18a811] font-bold text-xl'>Surojit Chakroborty</p>
       </div>
     </div>
-
-    <p className={`ms-5 pt-20 ${lb.className} text-[#000000] text-3xl`}>My Services</p>
-      <div id='services' className='flex flex-col mx-5 gap-5 justify-between pt-5'>
-        <ServiceCard
-         title="Fitness Coaching"
-         description="Personalized workout programs tailored to your goals."
-         price={99.99}
-         imageUrl="/nutrition.jpg"/>
-          <ServiceCard
-         title="Fitness Coaching"
-         description="Personalized workout programs tailored to your goals."
-         price={99.99}
-         imageUrl="/nutrition.jpg"/>
-          <ServiceCard
-         title="Fitness Coaching"
-         description="Personalized workout programs tailored to your goals."
-         price={99.99}
-         imageUrl="/nutrition.jpg"/>
-      </div>
 
     <p id='certificates' className={`text-center pt-16 ${lb.className} text-[#000000] text-3xl`}>My Credentials</p>
      <div className='flex flex-row mx-10 w-[90%] mt-5'>
@@ -530,19 +559,9 @@ useEffect(() => {
               type='text'
               id='name'
               name='name'
-              className='border border-2 rounded-lg'
+              className='border border-2 rounded-lg ps-2'
               value={name}
               onChange={(e) => setName(e.target.value)}
-            />
-
-            <label htmlFor='age'>Age:</label>
-            <input
-              type='text'
-              id='age'
-              name='age'
-              className='border border-2 rounded-lg'
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
             />
 
             <label htmlFor='contact'>Contact Number:</label>
@@ -550,8 +569,9 @@ useEffect(() => {
               type='text'
               id='contact'
               name='contact'
-              className='border border-2 rounded-lg'
+              className='border border-2 rounded-lg ps-2'
               value={contact}
+              placeholder='optional'
               onChange={(e) => setContact(e.target.value)}
             />
 
@@ -560,17 +580,28 @@ useEffect(() => {
               type='text'
               id='email'
               name='email'
-              className='border border-2 rounded-lg'
+              className='border border-2 rounded-lg ps-2'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <button type='button' onClick={handleUpload} className='bg-[#0759de] mt-5 mx-10 rounded-lg text-white p-3'>
+          <label htmlFor='age'>Ask Arghyadip:</label>
+          <textarea
+            type='text'
+            id='age'
+            name='age'
+            className='h-20 border border-2 rounded-lg resize-none box-border p-2'
+            style={{ width: '300px' }}
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            />
+
+            <button type='button' onClick={handleUpload} className='bg-[#000000] mt-5 mx-10 rounded-lg text-white p-3'>
               Submit
             </button>
           </form>
-          </div>
-        </div>
+         </div>
+      </div>
       )}
   </div>
     )
