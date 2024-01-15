@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import { Libre_Baskerville} from 'next/font/google';
-import { Header } from './header/page';
+import Header from './header/page';
 import ImageSlider from './image_slider/page';
 import HoverButton from './hover_button/page';
 import ServiceCard from './service_card/page';
@@ -9,12 +9,6 @@ import ServiceCard from './service_card/page';
 const lb= Libre_Baskerville({ subsets: ['latin'], weight: '400' });
 
 export default function Home() {
-  const images = [
-    '/c1.jpg',
-    '/c2.jpg',
-    '/c3.jpg',
-    '/c4.jpg'
-];
 
 const [fade, setFade] = useState(false);
 
@@ -82,7 +76,7 @@ useEffect(() => {
 
   return ((windowWidth >= 768 ?
     <div className='bg-gradient-to-r from-[#a19f9f] via-[#c9c9c9] to-[#ffffff]' style={{ position: 'relative', width: '100%', height: '400vh'}}>
-    <Header />
+    <Header windowWidth={windowWidth}/>
     <div
       className={`h-[100vh] w-[80vh] ms-14 mt-16 absolute rounded-t-full transition-opacity duration-1000 ${fadein ? 'opacity-100' : 'opacity-0'}`}
       style={{
@@ -111,7 +105,7 @@ useEffect(() => {
       Transform Your<br />Body, get<br />your Dream Life
     </p>
      <div className=' mt-[120vh] ms-[20vh] w-[113vh] h-[60vh]'>
-        <ImageSlider images={images} />
+        <ImageSlider/>
      </div>
      <p className={`ms-[20vh] pt-[40vh] ${lb.className} text-[#000000] text-5xl w-[60vh]`}>My Services</p>
      <div id='services' className='flex flex-col'>
@@ -174,7 +168,7 @@ useEffect(() => {
     </div>
     <p id='certificates' className={`ms-5 pt-16 ${lb.className} text-[#000000] text-3xl`}>My Certificates</p>
      <div className='mx-5 w-[90%]'>
-        <ImageSlider images={images} />
+        <ImageSlider/>
      </div>
      <p className={`ms-5 pt-20 ${lb.className} text-[#000000] text-3xl`}>My Services</p>
       <div id='services' className='flex flex-col mx-5 gap-5 justify-between pt-5'>

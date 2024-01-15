@@ -1,7 +1,14 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = () => {
+  const images = [
+    '/c1.jpg',
+    '/c2.jpg',
+    '/c3.jpg',
+    '/c4.jpg'
+];
+
   const [slideIndex, setSlideIndex] = useState(1);
 
   useEffect(() => {

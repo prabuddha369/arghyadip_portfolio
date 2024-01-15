@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+'use client';
+import React,{ useState} from 'react';
 import Image from 'next/image';
 import { IoIosMenu } from "react-icons/io";
 import Link from 'next/link';
@@ -6,21 +7,8 @@ import { Dancing_Script } from 'next/font/google';
 
 const dancing_script = Dancing_Script({ subsets: ['latin'], weight: '400' });
 
-export const Header = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
+const Header = ({windowWidth}) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -73,3 +61,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;
