@@ -25,10 +25,10 @@ const Header = ({windowWidth}) => {
         <Link href='#about'>
           <p className='transition duration-300 hover:text-blue-500'>About</p>
         </Link>
-        <Link href='#'>
+        <Link href='/events'>
           <p className='transition duration-300 hover:text-blue-500'>Events</p>
         </Link>
-        <Link href='#'>
+        <Link href='#contact'>
           <p className='transition duration-300 hover:text-blue-500'>Contact</p>
         </Link>
         <Link href='#services'>
@@ -48,7 +48,7 @@ const Header = ({windowWidth}) => {
               <Link href='#contact'>
                 <p className='my-4 text-white cursor-pointer'>Contact</p>
               </Link>
-              <Link href='#'>
+              <Link href='/events'>
                 <p className='my-4 text-white cursor-pointer'>Events</p>
               </Link>
               <Link href='#services'>

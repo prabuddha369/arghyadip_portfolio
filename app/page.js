@@ -184,34 +184,34 @@ useEffect(() => {
       <ServiceCard
          title="Online Personal Consultancey"
          description="Provided virtual personal training sessions and customized workout plans to clients, ensuring flexibility and convenience."
-         price="30 mins ₹499"
+         price="30 mins | ₹499"
          imageUrl="/1.jpg"/>
           <ServiceCard
          title="Weight Loss Transformation"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price=""
+         price="30 mins | ₹499 | additional charges applied"
          imageUrl="/2.jpg"/>
           <ServiceCard
          title="Functional Fitness Training"
          description="Designed functional fitness programs to improve overall strength, flexibility, and endurance for clients of all fitness levels."
-         price=""
+         price="₹499 | additional charges applied"
          imageUrl="/3.jpg"/>
       </div>
       <div className='flex flex-row gap-5 justify-between px-16 py-10'>
       <ServiceCard
          title="Sports Nutritrion"
          description="Optimize performance with personalized sports nutrition plans for peak fitness and well-being of the body."
-         price=""
+         price="30 mins | ₹499 | additional charges applied"
          imageUrl="/4.jpg"/>
           <ServiceCard
          title="Diet & Nutuion Planing"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price=""
+         price="30 mins | ₹499 | additional charges applied"
          imageUrl="/5.jpg"/>
           <ServiceCard
          title="Group Fitness Classes"
          description="Led energizing and motivating group fitness classes, catered to different fitness levels and goals, fostering a sense of community."
-         price=""
+         price="₹499 | additional charges applied"
          imageUrl="/6.jpg"/>
       </div>
      </div>
@@ -274,9 +274,15 @@ useEffect(() => {
      <div className='py-10 bg-black text-white'>
 <p className={`text-center pt-5 ${lb.className} text-2xl`}>Get in touch with me</p>
      <div id='contact' className='mx-[30%] py-10 flex flex-row justify-between'>
+     <Link href="https://www.instagram.com/arghyadip_1?igsh=MTVsY2Vzcm5ia3B2dg==" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
      <img width="40" height="40" src="https://img.icons8.com/fluency/96/instagram-new.png" alt="instagram-new"/>
+     </Link>
+     <Link href="https://www.linkedin.com/in/arghyadip-biswas-31b482214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
      <img width="40" height="40" src="https://img.icons8.com/fluency/96/linkedin.png" alt="linkedin"/>
+     </Link>
+     <Link href="mailto:arghyadipbiswas.consulting@gmail.com" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
      <img width="40" height="40" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/>
+     </Link>
      </div>
      <div className='flex flex-col mx-20'>
      <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Terms & Conditions</p>
@@ -431,32 +437,32 @@ useEffect(() => {
         <ServiceCard
          title="Online Personal Consultancey"
          description="Provided virtual personal training sessions and customized workout plans to clients, ensuring flexibility and convenience."
-         price="30 mins ₹499"
+         price="30 mins | ₹499"
          imageUrl="/1.jpg"/>
           <ServiceCard
          title="Weight Loss Transformation"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price=""
+         price="30 mins | ₹499 | additional charges applied"
          imageUrl="/2.jpg"/>
           <ServiceCard
          title="Functional Fitness Training"
          description="Designed functional fitness programs to improve overall strength, flexibility, and endurance for clients of all fitness levels."
-         price=""
+         price="₹499 | additional charges applied"
          imageUrl="/3.jpg"/>
           <ServiceCard
          title="Sports Nutritrion"
          description="Optimize your athletic performance with personalized sports nutrition guidance. As an internationally accredited sports nutrition consultant, I craft tailored dietary plans to fuel your body, enhance recovery, and elevate your overall well-being, ensuring you achieve peak performance and reach your fitness goals."
-         price=""
+         price="30 mins | ₹499 | additional charges applied"
          imageUrl="/4.jpg"/>
           <ServiceCard
          title="Diet & Nutuion Planing"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price=""
+         price="30 mins | ₹499 | additional charges applied"
          imageUrl="/5.jpg"/>
           <ServiceCard
          title="Group Fitness Classes"
          description="Led energizing and motivating group fitness classes that catered to different fitness levels and goals, fostering a sense of community."
-         price=""
+         price="₹499 | additional charges applied"
          imageUrl="/6.jpg"/>
       </div>
 
@@ -549,9 +555,15 @@ useEffect(() => {
 <div className='py-10 bg-black text-white'>
 <p className={`text-center pt-5 ${lb.className} text-xl`}>Get in touch with me</p>
      <div id='contact' className='px-20 py-10 flex flex-row justify-between'>
+     <Link href="https://www.instagram.com/arghyadip_1?igsh=MTVsY2Vzcm5ia3B2dg=="  style={{ cursor: 'pointer' }}>
      <img width="40" height="40" src="https://img.icons8.com/fluency/96/instagram-new.png" alt="instagram-new"/>
+     </Link>
+     <Link href="https://www.linkedin.com/in/arghyadip-biswas-31b482214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  style={{ cursor: 'pointer' }}>
      <img width="40" height="40" src="https://img.icons8.com/fluency/96/linkedin.png" alt="linkedin"/>
+     </Link>
+     <Link href="mailto:arghyadipbiswas.consulting@gmail.com"  style={{ cursor: 'pointer' }}>
      <img width="40" height="40" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/>
+     </Link>
      </div>
      <div className='flex flex-col mx-20'>
      <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Terms & Conditions</p>
@@ -562,9 +574,9 @@ useEffect(() => {
 
      <div className='fixed bg-white rounded-full p-5 bottom-5 right-5 shadow-md'>
         <img
-          width="44"
-          height="44"
-          src="https://img.icons8.com/color/96/speech-bubble-with-dots.png"
+          width="30"
+          height="30"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO2YMU7DQBBFRxSIkhPg3ZRU3IBTUFA5SLBzBEpKQpNwEc6QS3ACxwudLe1HSBQwyFAglDiYIGu9YZ403dieP392VjKRoijbh5wc7sLZm8D2AWwlZgRnPdhOmpo6C2geiF04lmPSWcAQOo9lJx5/44AMMUgFsDogOkJdiD0q0EPM8bsNXaO8xRdZfXsmfuHFF16q2XjjnGo2/jGnFwHNBxfh9SN8UfaaAxXALdYXjfWlVNP8jznl2pxeHEj+EEMFWHVgLbFHBXoGOH63oVuI43cceg/wcCI4Wya+Rs11kgLChj9321/I9i04c0lDBq3Fmxfw6JSGDlYLqMOFOaYUwIo5fDrPjigV8H1s7p/d6IBSAl+dn9d5tk+pgc+9eyd5tkcpEpyZyhXtxK5DUZR/wDtXlZfVY/sXVAAAAABJRU5ErkJggg=="
           alt="speech-bubble-with-dots"
           onClick={handleButtonClick}
           style={{ cursor: 'pointer' }}
