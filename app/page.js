@@ -123,13 +123,14 @@ useEffect(() => {
       style={{
         backgroundImage: `url(../my_pic.png)`,
         backgroundSize: 'cover',
+        alt:'Arghyadip Biswas',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
       }}
     />
     </div>
     <div className='flex flex-row justify-start items-center mt-10'>
-      <Image src="/my_pic2.jpg" width={300} height={300} className='rounded-full ms-[10%]'/>
+      <Image src="/my_pic2.jpg" width={300} height={300} className='rounded-full ms-[10%]' alt='Arghyadip Biswas'/>
       <div className='flex flex-col'>
       <p id='about' className={`${lb.className} text-center ms-20 text-[#000000] text-5xl transition-opacity duration-500`}>Arghyadip Biswas</p>
       <div className="ms-20">
@@ -293,7 +294,7 @@ useEffect(() => {
 
     <div className='fixed bottom-10 right-10'  onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
     <div className="flex p-3 rounded-3xl items-center bg-[#555DA1] px-4 cursor-pointer transition duration-300 hover:bg-white hover:text-black" style={{boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)'}}>
-    <img height={40} width={40} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO2YMU7DQBBFRxSIkhPg3ZRU3IBTUFA5SLBzBEpKQpNwEc6QS3ACxwudLe1HSBQwyFAglDiYIGu9YZ403dieP392VjKRoijbh5wc7sLZm8D2AWwlZgRnPdhOmpo6C2geiF04lmPSWcAQOo9lJx5/44AMMUgFsDogOkJdiD0q0EPM8bsNXaO8xRdZfXsmfuHFF16q2XjjnGo2/jGnFwHNBxfh9SN8UfaaAxXALdYXjfWlVNP8jznl2pxeHEj+EEMFWHVgLbFHBXoGOH63oVuI43cceg/wcCI4Wya+Rs11kgLChj9321/I9i04c0lDBq3Fmxfw6JSGDlYLqMOFOaYUwIo5fDrPjigV8H1s7p/d6IBSAl+dn9d5tk+pgc+9eyd5tkcpEpyZyhXtxK5DUZR/wDtXlZfVY/sXVAAAAABJRU5ErkJggg=="/>
+    <img alt='Contact Arghyadip' height={40} width={40} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO2YMU7DQBBFRxSIkhPg3ZRU3IBTUFA5SLBzBEpKQpNwEc6QS3ACxwudLe1HSBQwyFAglDiYIGu9YZ403dieP392VjKRoijbh5wc7sLZm8D2AWwlZgRnPdhOmpo6C2geiF04lmPSWcAQOo9lJx5/44AMMUgFsDogOkJdiD0q0EPM8bsNXaO8xRdZfXsmfuHFF16q2XjjnGo2/jGnFwHNBxfh9SN8UfaaAxXALdYXjfWlVNP8jznl2pxeHEj+EEMFWHVgLbFHBXoGOH63oVuI43cceg/wcCI4Wya+Rs11kgLChj9321/I9i04c0lDBq3Fmxfw6JSGDlYLqMOFOaYUwIo5fDrPjigV8H1s7p/d6IBSAl+dn9d5tk+pgc+9eyd5tkcpEpyZyhXtxK5DUZR/wDtXlZfVY/sXVAAAAABJRU5ErkJggg=="/>
         <span>Contact Now</span>
     </div>
     </div>
@@ -577,7 +578,7 @@ useEffect(() => {
           width="30"
           height="30"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO2YMU7DQBBFRxSIkhPg3ZRU3IBTUFA5SLBzBEpKQpNwEc6QS3ACxwudLe1HSBQwyFAglDiYIGu9YZ403dieP392VjKRoijbh5wc7sLZm8D2AWwlZgRnPdhOmpo6C2geiF04lmPSWcAQOo9lJx5/44AMMUgFsDogOkJdiD0q0EPM8bsNXaO8xRdZfXsmfuHFF16q2XjjnGo2/jGnFwHNBxfh9SN8UfaaAxXALdYXjfWlVNP8jznl2pxeHEj+EEMFWHVgLbFHBXoGOH63oVuI43cceg/wcCI4Wya+Rs11kgLChj9321/I9i04c0lDBq3Fmxfw6JSGDlYLqMOFOaYUwIo5fDrPjigV8H1s7p/d6IBSAl+dn9d5tk+pgc+9eyd5tkcpEpyZyhXtxK5DUZR/wDtXlZfVY/sXVAAAAABJRU5ErkJggg=="
-          alt="speech-bubble-with-dots"
+          alt='Contact Arghyadip'
           onClick={handleButtonClick}
           style={{ cursor: 'pointer' }}
         />
