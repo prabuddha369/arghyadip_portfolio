@@ -189,29 +189,29 @@ useEffect(() => {
           <ServiceCard
          title="Weight Loss Transformation"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/2.jpg"/>
           <ServiceCard
          title="Functional Fitness Training"
          description="Designed functional fitness programs to improve overall strength, flexibility, and endurance for clients of all fitness levels."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/3.jpg"/>
       </div>
       <div className='flex flex-row gap-5 justify-between px-16 py-10'>
       <ServiceCard
          title="Sports Nutritrion"
          description="Optimize performance with personalized sports nutrition plans for peak fitness and well-being of the body."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/4.jpg"/>
           <ServiceCard
          title="Diet & Nutuion Planing"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/5.jpg"/>
           <ServiceCard
          title="Group Fitness Classes"
          description="Led energizing and motivating group fitness classes, catered to different fitness levels and goals, fostering a sense of community."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/6.jpg"/>
       </div>
      </div>
@@ -271,8 +271,23 @@ useEffect(() => {
 `}</style>
      </div>
 
-    <div className='fixed bottom-10 right-40'  onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
-    <div className="flex p-4 items-center bg-black px-4 cursor-pointer transition duration-300 hover:bg-white hover:text-black" style={{boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)'}}>
+     <div className='py-10 bg-black text-white'>
+<p className={`text-center pt-5 ${lb.className} text-2xl`}>Get in touch with me</p>
+     <div id='contact' className='mx-[30%] py-10 flex flex-row justify-between'>
+     <img width="40" height="40" src="https://img.icons8.com/fluency/96/instagram-new.png" alt="instagram-new"/>
+     <img width="40" height="40" src="https://img.icons8.com/fluency/96/linkedin.png" alt="linkedin"/>
+     <img width="40" height="40" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/>
+     </div>
+     <div className='flex flex-col mx-20'>
+     <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Terms & Conditions</p>
+     <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Privacy Policy</p>
+     <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Return & Refund Policy</p>
+     </div>
+</div>
+
+    <div className='fixed bottom-10 right-10'  onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
+    <div className="flex p-3 rounded-3xl items-center bg-[#555DA1] px-4 cursor-pointer transition duration-300 hover:bg-white hover:text-black" style={{boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)'}}>
+    <img height={40} width={40} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO2YMU7DQBBFRxSIkhPg3ZRU3IBTUFA5SLBzBEpKQpNwEc6QS3ACxwudLe1HSBQwyFAglDiYIGu9YZ403dieP392VjKRoijbh5wc7sLZm8D2AWwlZgRnPdhOmpo6C2geiF04lmPSWcAQOo9lJx5/44AMMUgFsDogOkJdiD0q0EPM8bsNXaO8xRdZfXsmfuHFF16q2XjjnGo2/jGnFwHNBxfh9SN8UfaaAxXALdYXjfWlVNP8jznl2pxeHEj+EEMFWHVgLbFHBXoGOH63oVuI43cceg/wcCI4Wya+Rs11kgLChj9321/I9i04c0lDBq3Fmxfw6JSGDlYLqMOFOaYUwIo5fDrPjigV8H1s7p/d6IBSAl+dn9d5tk+pgc+9eyd5tkcpEpyZyhXtxK5DUZR/wDtXlZfVY/sXVAAAAABJRU5ErkJggg=="/>
         <span>Contact Now</span>
     </div>
     </div>
@@ -340,7 +355,7 @@ useEffect(() => {
       )}
   </div>
     :
-    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '700vh'}}>
+    <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '600vh'}}>
     <Header />
     <Toaster toastOptions={{ duration: 2000 }} />
     <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
@@ -421,27 +436,27 @@ useEffect(() => {
           <ServiceCard
          title="Weight Loss Transformation"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/2.jpg"/>
           <ServiceCard
          title="Functional Fitness Training"
          description="Designed functional fitness programs to improve overall strength, flexibility, and endurance for clients of all fitness levels."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/3.jpg"/>
           <ServiceCard
          title="Sports Nutritrion"
          description="Optimize your athletic performance with personalized sports nutrition guidance. As an internationally accredited sports nutrition consultant, I craft tailored dietary plans to fuel your body, enhance recovery, and elevate your overall well-being, ensuring you achieve peak performance and reach your fitness goals."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/4.jpg"/>
           <ServiceCard
          title="Diet & Nutuion Planing"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/5.jpg"/>
           <ServiceCard
          title="Group Fitness Classes"
          description="Led energizing and motivating group fitness classes that catered to different fitness levels and goals, fostering a sense of community."
-         price="30 mins ₹499"
+         price=""
          imageUrl="/6.jpg"/>
       </div>
 
@@ -530,6 +545,21 @@ useEffect(() => {
   }
 `}</style>
      </div>
+
+<div className='py-10 bg-black text-white'>
+<p className={`text-center pt-5 ${lb.className} text-xl`}>Get in touch with me</p>
+     <div id='contact' className='px-20 py-10 flex flex-row justify-between'>
+     <img width="40" height="40" src="https://img.icons8.com/fluency/96/instagram-new.png" alt="instagram-new"/>
+     <img width="40" height="40" src="https://img.icons8.com/fluency/96/linkedin.png" alt="linkedin"/>
+     <img width="40" height="40" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/>
+     </div>
+     <div className='flex flex-col mx-20'>
+     <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Terms & Conditions</p>
+     <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Privacy Policy</p>
+     <p className={`text-center pt-5 ${lb.className} text-[#8a8a8a] text-sm`}>Return & Refund Policy</p>
+     </div>
+</div>
+
      <div className='fixed bg-white rounded-full p-5 bottom-5 right-5 shadow-md'>
         <img
           width="44"
