@@ -5,6 +5,7 @@ import Header from './header/page';
 import ServiceCard from './service_card/page';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { Oval } from 'react-loader-spinner';
 import Image from 'next/image'
 import { toast, Toaster } from "react-hot-toast";
 import Link from 'next/link'
@@ -44,6 +45,8 @@ const [contact, setContact] = useState('');
 const [email, setEmail] = useState('');
 const [isFormVisible, setFormVisibility] = useState(false);
 
+ const [uploading, setUploading] = useState(false);
+
 const handleButtonClick = () => {
   setFormVisibility(!isFormVisible);
   setName('');
@@ -59,6 +62,7 @@ const handleUpload = async () => {
     return;
   }
   try {
+    setUploading(true);
     const response = await fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -75,17 +79,20 @@ const handleUpload = async () => {
     
     if (response.ok) {
       toast.success("Submitted successfully!");
-      handleButtonClick;
+      handleButtonClick();
+      setUploading(false);
     } else {
       const errorData = await response.json();
       console.log('Error sending email:', errorData);
       toast.error("An error occured, please try again!");
-      handleButtonClick;
+      handleButtonClick();
+      setUploading(false);
     }
   } catch (error) {
     console.log('An error occurred:', error);
     toast.error("An error occured, please try again!");
-    handleButtonClick;
+    handleButtonClick();
+    setUploading(false);
   }
 }
 
@@ -155,7 +162,7 @@ useEffect(() => {
         <img width="30" height="30" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         <img width="30" height="30" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         </div>
-        <p className='font-bold'>2,123&nbsp;&nbsp;&nbsp;&nbsp;Ratings</p>
+        {/* <p className='font-bold'>2,123&nbsp;&nbsp;&nbsp;&nbsp;Ratings</p> */}
         <p className='font-bold'>Google Reviews</p>
       </div>
       <div className='flex flex-col text-2xl text-black text-center'>
@@ -167,8 +174,8 @@ useEffect(() => {
         <img width="30" height="30" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         <img width="30" height="30" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         </div>
-        <p className='font-bold'>123&nbsp;&nbsp;&nbsp;&nbsp;Reviews</p>
-        <p className='font-bold'>XYZ Rating</p>
+        {/* <p className='font-bold'>123&nbsp;&nbsp;&nbsp;&nbsp;Reviews</p> */}
+        <p className='font-bold'>Client Rating</p>
       </div>
       <div className='flex flex-col w-[100vh] mt-16 text-black'>
       <p className='text-black text-2xl font-bold'>Client Success Stories</p>
@@ -357,6 +364,19 @@ useEffect(() => {
               Submit
             </button>
           </form>
+           {uploading ? (<div
+                className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 z-50"
+              >
+                <Oval
+                  height={80}
+                  width={80}
+                  color="#4fa94d"
+                  secondaryColor="#4fa94d"
+                  strokeWidth={2}
+                  strokeWidthSecondary={2}
+                  ariaLabel='oval-loading'
+                />
+              </div>) : null}
           </div>
         </div>
       )}
@@ -408,7 +428,7 @@ useEffect(() => {
         <img width="20" height="20" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         <img width="20" height="20" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         </div>
-        <p className='font-bold'>2,123&nbsp;&nbsp;&nbsp;&nbsp;Ratings</p>
+        {/* <p className='font-bold'>2,123&nbsp;&nbsp;&nbsp;&nbsp;Ratings</p> */}
         <p className='font-bold'>Google Reviews</p>
       </div>
       <div className='flex flex-col text-md text-black text-center'>
@@ -420,8 +440,8 @@ useEffect(() => {
         <img width="20" height="20" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         <img width="20" height="20" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
         </div>
-        <p className='font-bold'>123&nbsp;&nbsp;&nbsp;&nbsp;Reviews</p>
-        <p className='font-bold'>XYZ Rating</p>
+        {/* <p className='font-bold'>123&nbsp;&nbsp;&nbsp;&nbsp;Reviews</p> */}
+        <p className='font-bold'>Client Rating</p>
       </div>
     </div>
 
@@ -643,6 +663,19 @@ useEffect(() => {
               Submit
             </button>
           </form>
+           {uploading ? (<div
+                className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 z-50"
+              >
+                <Oval
+                  height={80}
+                  width={80}
+                  color="#4fa94d"
+                  secondaryColor="#4fa94d"
+                  strokeWidth={2}
+                  strokeWidthSecondary={2}
+                  ariaLabel='oval-loading'
+                />
+              </div>) : null}
          </div>
       </div>
       )}
