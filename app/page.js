@@ -204,7 +204,7 @@ useEffect(() => {
          price="30 mins | ₹499 | additional charges applied"
          imageUrl="/4.jpg"/>
           <ServiceCard
-         title="Diet & Nutuion Planing"
+         title="Diet & Nutrition Planing"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
          price="30 mins | ₹499 | additional charges applied"
          imageUrl="/5.jpg"/>
@@ -455,7 +455,7 @@ useEffect(() => {
          price="30 mins | ₹499 | additional charges applied"
          imageUrl="/4.jpg"/>
           <ServiceCard
-         title="Diet & Nutuion Planing"
+         title="Diet & Nutrition Planing"
          description="Helped clients achieve their weight loss goals through personalized training programs and nutrition guidance."
          price="30 mins | ₹499 | additional charges applied"
          imageUrl="/5.jpg"/>
