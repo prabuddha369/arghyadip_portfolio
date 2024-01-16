@@ -183,7 +183,7 @@ useEffect(() => {
       <div className='flex flex-row gap-5 justify-between px-16 py-10'>
       <ServiceCard
          title="Online Personal Consultancey"
-         description="Provided virtual personal training sessions and customized workout plans to clients, ensuring flexibility and convenience."
+         description="Provided virtual personal consultation sessions and customized workout & nutrition plans to clients, ensuring flexibility and convenience."
          price="30 mins | ₹499"
          imageUrl="/1.jpg"/>
           <ServiceCard
@@ -436,7 +436,7 @@ useEffect(() => {
       <div id='services' className='flex flex-col mx-5 gap-5 justify-between pt-5'>
         <ServiceCard
          title="Online Personal Consultancey"
-         description="Provided virtual personal training sessions and customized workout plans to clients, ensuring flexibility and convenience."
+         description="Provided virtual personal consultation sessions and customized workout & nutrition plans to clients, ensuring flexibility and convenience."
          price="30 mins | ₹499"
          imageUrl="/1.jpg"/>
           <ServiceCard
