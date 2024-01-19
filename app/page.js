@@ -14,31 +14,6 @@ const lb= Libre_Baskerville({ subsets: ['latin'], weight: '400' });
 
 export default function Home() {
 
-const [fade, setFade] = useState(false);
-const [fadein, setFadein] = useState(false);
-
-  // Effect to trigger the fade-in animation after a short delay (e.g., 500ms)
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setFade(true);
-    }, 1000); // Adjust the delay as needed
-
-    // Cleanup function to clear the timeout if the component unmounts
-    return () => clearTimeout(timeout);
-  }, []);
-
-  // Effect to trigger the fade-in animation after a short delay (e.g., 500ms)
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setFadein(true);
-    }, 300); // Adjust the delay as needed
-
-    // Cleanup function to clear the timeout if the component unmounts
-    return () => clearTimeout(timeout);
-  }, []);
-
-
-
 const [name, setName] = useState('');
 const [age, setAge] = useState('');
 const [contact, setContact] = useState('');
@@ -126,7 +101,7 @@ useEffect(() => {
     </div>
     </div>
     <div
-      className={`h-[100vh] w-[100vh] rounded-xl transition-opacity duration-1000 ${fadein ? 'opacity-100' : 'opacity-0'}`}
+      className={`h-[100vh] w-[100vh] rounded-xl transition-opacity duration-1000`}
       style={{
         backgroundImage: `url(../my_pic.png)`,
         backgroundSize: 'cover',
@@ -137,9 +112,9 @@ useEffect(() => {
     />
     </div>
     <div className='flex flex-row justify-start items-center mt-10'>
-      <Image src="/my_pic2.jpg" width={300} height={300} className='rounded-full ms-[10%]' alt='Arghyadip Biswas'/>
+      <Image id='about' src="/my_pic2.jpg" width={300} height={300} className='rounded-full ms-[10%]' alt='Arghyadip Biswas'/>
       <div className='flex flex-col'>
-      <p id='about' className={`${lb.className} text-center ms-20 text-[#000000] text-5xl transition-opacity duration-500`}>Arghyadip Biswas</p>
+      <p className={`${lb.className} text-center ms-20 text-[#000000] text-5xl transition-opacity duration-500`}>Arghyadip Biswas</p>
       <div className="ms-20">
       <ul className={`text-[#000000] text-lg ${lb.className} pt-2 transition-opacity duration-500`}>
         <ul className="list-disc pl-5">
@@ -389,9 +364,9 @@ useEffect(() => {
       Transform Your<br />Body, get<br />your Dream Physique
     </p>
     <div className='flex flex-row justify-start items-center mx-10 mt-10'>
-      <Image src="/my_pic2.jpg" width={110} height={110} className='rounded-full'/>
+      <Image id='about' src="/my_pic2.jpg" width={110} height={110} className='rounded-full'/>
       <div className='flex flex-col'>
-      <p id='about' className={`${lb.className} text-center ms-4 text-[#000000] text-xl transition-opacity duration-500`}>Arghyadip Biswas</p>
+      <p className={`${lb.className} text-center ms-4 text-[#000000] text-xl transition-opacity duration-500`}>Arghyadip Biswas</p>
       <div className="ms-4 mt-3">
     <ul className={`text-[#000000] text-[10px] ${lb.className} transition-opacity duration-500`}>
       <ul className="list-disc pl-5">
