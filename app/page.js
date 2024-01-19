@@ -112,11 +112,10 @@ useEffect(() => {
 
   return ((windowWidth >= 768 ?
     <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '600vh'}}>
-    <Header windowWidth={windowWidth}/>
     <Toaster toastOptions={{ duration: 2000 }} />
     <div className='flex flex-row mt-20 mx-20 justify-between gap-2'>
     <div className='flex flex-col'>
-    <p className={`text-[10vh] bg-clip-text ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
+    <p className={`text-[10vh] bg-clip-text ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform`}>
       Transform Your<br />Body, get<br />your Dream Physique
     </p>
     <div className='justify-start'>
@@ -383,9 +382,8 @@ useEffect(() => {
   </div>
     :
     <div className='bg-[#f4f8fd]' style={{ position: 'relative', width: '100%', height: '600vh'}}>
-    <Header />
     <Toaster toastOptions={{ duration: 2000 }} />
-    <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform  ${fade ? 'opacity-100' : 'opacity-0'}`}>
+    <p className={`text-4xl mx-10 mt-10 bg-clip-text text-center ${lb.className} text-transparent bg-gradient-to-r from-[#f25811] via-[#555DA1] to-[#208049] transition-opacity duration-1000 transform`}>
       Transform Your<br />Body, get<br />your Dream Physique
     </p>
     <div className='flex flex-row justify-start items-center mx-10 mt-10'>
