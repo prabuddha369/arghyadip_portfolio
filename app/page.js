@@ -43,7 +43,7 @@ const handleUpload = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      // Include any required data in the request body
+
       body: JSON.stringify({
         name,
         email,
@@ -155,8 +155,6 @@ useEffect(() => {
       <div className='flex flex-col w-[100vh] mt-16 text-black'>
       <p className='text-black text-2xl font-bold'>Client Success Stories</p>
         <p className='text-[#18a811] font-bold text-xl mt-5'>Prabuddha Chatterjee</p>
-        <p>Arghyadip’s personalized coaching has transformed my body and mind. His holistic approach to fitness and nutrition has helped me achieve my goals and maintain a healthy lifestyle.</p>
-        <p className='text-[#18a811] font-bold text-xl mt-5'>Surojit Chakroborty</p>
         <p>Arghyadip’s personalized coaching has transformed my body and mind. His holistic approach to fitness and nutrition has helped me achieve my goals and maintain a healthy lifestyle.</p>
     </div>
     </div>
@@ -423,8 +421,6 @@ useEffect(() => {
     <div className='flex flex-col mx-10 mt-16 text-black'>
       <p className='text-black text-2xl font-bold'>Client Success Stories</p>
         <p className='text-[#18a811] font-bold text-xl mt-5'>Prabuddha Chatterjee</p>
-        <p>Arghyadip’s personalized coaching has transformed my body and mind. His holistic approach to fitness and nutrition has helped me achieve my goals and maintain a healthy lifestyle.</p>
-        <p className='text-[#18a811] font-bold text-xl mt-5'>Surojit Chakroborty</p>
         <p>Arghyadip’s personalized coaching has transformed my body and mind. His holistic approach to fitness and nutrition has helped me achieve my goals and maintain a healthy lifestyle.</p>
     </div>
 
